@@ -1,0 +1,32 @@
+<h1>Hotel Price Management</h1>
+<div>
+
+  <table border='1' width='100%' style='border-collapse: collapse;'>
+    <tr>
+      <th>ID</th>
+      <th>Hotel Name</th>
+      <th>Price per night</th>
+
+    </tr>
+
+    <tr *ngFor="let Hotel of hoteles">
+      <td>{{ Hotel.id }}</td>
+      <td>{{ Hotel.nombre }}</td>
+      <td>{{ Hotel.precio }}</td>
+      <td>
+        <button (click)="deleteHotel(Hotel.id)">Delete</button>
+        <button (click)="selectHotel(Hotel)">Update</button>
+      </td>
+    </tr>
+  </table>
+
+  <br>
+  <form #f = "ngForm">
+    <label>Hotel Name</label>
+    <input type="text" name="number" [(ngModel)] = "selectedHotel.nombre">
+    <br>
+    <label>Price per night</label>
+    <input type="number" name="price" [(ngModel)] = "selectedHotel.precio">
+    <br>
+    <input type="button" (click)="createOrUpdateHotel(f)" value="Add Hotel">
+  </form>
