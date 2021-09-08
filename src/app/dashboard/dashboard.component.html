@@ -23,10 +23,10 @@
   <br>
   <form #f = "ngForm">
     <label>Hotel Name</label>
-    <input type="text" name="number" [(ngModel)] = "selectedHotel.nombre">
+    <input type="text" name="nombre" [(ngModel)] = "selectedHotel.nombre">
     <br>
     <label>Price per night</label>
-    <input type="number" name="price" [(ngModel)] = "selectedHotel.precio">
+    <input type="number" name="precio" [(ngModel)] = "selectedHotel.precio">
     <br>
     <input type="button" (click)="createOrUpdateHotel(f)" value="Add Hotel">
   </form>

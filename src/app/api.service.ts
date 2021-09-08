@@ -14,11 +14,11 @@ export class ApiService {
     return this.httpClient.get<Hotel[]>(`${this.PHP_API_SERVER}/hoteles`);
   }
   createHotel(hotel: Hotel): Observable<Hotel>{
-    return this.httpClient.post<Hotel>(`${this.PHP_API_SERVER}/hoteles/add/`, hotel);
+    return this.httpClient.post<Hotel>(`${this.PHP_API_SERVER}/hoteles/add`, hotel);
   }
 
   updateHotel(hotel: Hotel){
-    return this.httpClient.put<Hotel>(`${this.PHP_API_SERVER}/hoteles/{id}`, hotel);   
+    return this.httpClient.put<Hotel>(`${this.PHP_API_SERVER}/hoteles/mod/${hotel.id}`, hotel);   
   }
   deleteHotel(id: number){
     return this.httpClient.delete<Hotel>(`${this.PHP_API_SERVER}/hoteles/${id}`);
